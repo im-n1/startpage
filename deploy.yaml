@@ -1,0 +1,19 @@
+- hosts: o1
+  vars:
+    project_dir: startpage
+  tasks:
+
+    - name: Project directory
+      file:
+        path: "{{ project_dir }}"
+        state: directory
+    
+    - name: Copy | index.html
+      copy:
+        src: index.html
+        dest: "{{ project_dir }}"
+
+    - name: Copy | main.css
+      copy:
+        src: main.css
+        dest: "{{ project_dir }}"
