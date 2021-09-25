@@ -38,11 +38,11 @@ body {
     margin: 0 auto
 }
 
-@media(min-width: 768px) {
-    body {
-        justify-content: center;
-    }
-}
+/* @media(min-width: 768px) { */
+/*     body { */
+/*         justify-content: center; */
+/*     } */
+/* } */
 
 a {
     color: inherit;
