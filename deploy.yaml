@@ -8,12 +8,36 @@
         path: "{{ project_dir }}"
         state: directory
     
+    - name: Data directory
+      file:
+        path: "{{ project_dir + '/data' }}"
+        state: directory
+    
     - name: Copy | index.html
       copy:
         src: index.html
-        dest: "{{ project_dir }}"
+        dest: "{{ project_dir + '/data' }}"
 
     - name: Copy | main.css
       copy:
         src: main.css
+        dest: "{{ project_dir + '/data' }}"
+
+    - name: Copy | docker-compose file
+      copy:
+        src: docker-compose.yaml
         dest: "{{ project_dir }}"
+
+    - name: Copy | service file
+      copy:
+        src: startpage.service
+        dest: /etc/systemd/system
+      become: true
+
+    - name: Start the service
+      systemd:
+        enabled: true
+        state: restarted
+        daemon_reload: yes
+        name: startpage
+      become: true

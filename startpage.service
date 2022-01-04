@@ -1,0 +1,11 @@
+[Unit]
+Description=Startpage in Docker
+After=docker.service
+
+[Service]
+WorkingDirectory=/home/n1/startpage
+ExecStart=docker-compose up
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
