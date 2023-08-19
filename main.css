@@ -31,7 +31,7 @@
 body {
     background: var(--gb-dm-bg0);
     color: var(--gb-dm-fg0);
-    font: normal normal 8pt "Anonymous Pro";
+    font: normal normal 13px "Cozette";
     display: flex;
     flex-wrap: wrap;
     max-width: 660px;
